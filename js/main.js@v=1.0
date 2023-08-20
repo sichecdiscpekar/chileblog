@@ -1,0 +1,20 @@
+$(document).ready(function () {
+    const closePopupWindows = (target) => {
+        const popup = target.closest(".popup");
+
+        lockScroll(false, $(document.body).find('.popup'), 'header')
+
+        popup.fadeOut();
+    }
+
+    $('.button-close, .popup__area').on("click", (e) => {
+        const target = $(e.currentTarget);
+        closePopupWindows(target)
+    });
+
+
+    $('.call_form').on('click', () => {
+        $('#popup').fadeIn();
+    });
+
+});
